@@ -1,0 +1,18 @@
+{%extends 'base.html' %}
+
+{% block content %}
+
+
+<form class="form-search" action="/search_proc/" method="POST">{% csrf_token %}
+  <input name="naz" type="text" class="input-medium search-query">
+  <button name="klik" type="submit" class="btn">Search</button>
+</form>
+            <img src={{pictures}} width="550" height="300" />
+<p>{{res}}</p>
+{% endblock %}
+
+
+{% block head %}
+<style> {%include "cyber/style.css" %}
+ </style>
+{% endblock %}

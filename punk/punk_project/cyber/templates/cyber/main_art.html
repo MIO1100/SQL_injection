@@ -1,0 +1,47 @@
+{%extends 'base.html' %}
+
+{% block content %}
+<table cellspacing="0" id="maket">
+   <tr>
+    <td id="leftcol">
+        {%for name in names%}
+            <p style="margin-top: 80px;" >
+                {{name}}
+            </p>
+        {%endfor %}
+    </td>
+    <td id="rightcol">
+        {%for picture in pictures%}
+            <img src={{picture}} alt="Альтернативный текст" width="250" height="100" />
+        {%endfor %}
+
+
+    </td>
+   </tr>
+  </table>
+{% endblock %}
+
+
+{% block head %}
+<style> {%include "cyber/style.css" %}
+   #maket {
+    width: 100%; /* Ширина всей таблицы */
+   }
+   TD {
+    vertical-align: top; /* Вертикальное выравнивание в ячейках */
+    padding: 5px; /* Поля вокруг ячеек */
+   }
+   TD#leftcol {
+    width: 200px; /* Ширина левой колонки */
+    background: #ccc; /* Цвет фона левой колонки */
+    border: 1px solid #000; /* Параметры рамки */
+   }
+   TD#rightcol {
+    background: #fc3; /* Цвет фона правой колонки */
+    border: 1px solid #000; /* Параметры рамки */
+   }
+   #spacer {
+    width: 10px; /* Расстояние между колонками */
+   }
+ </style>
+{% endblock %}
